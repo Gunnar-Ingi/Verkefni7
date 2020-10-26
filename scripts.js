@@ -22,6 +22,12 @@ start();
  * @returns {string} Upprunalegi strengurinn hliðraður um n til hægri
  */
 function encode(str, n) {
+  str.toLocaleUpperCase();
+
+  for (let i = 0; i < n; i++) {
+      console.log(str[i] + n);
+  }
+
   return str;
 }
 
