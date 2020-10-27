@@ -9,17 +9,25 @@ const LETTERS = `AÁBDÐEÉFGHIÍJKLMNOÓPRSTUÚVXYÝÞÆÖ`;
  */
 function ask() {
   const answer = prompt('Hvort viltu kóða eða afkóða?');
-
+  if (answer !== "kóða") {
+    const warning = alert($,{input},'Veit ekki hvaða aðgerð „${input}“ er. Reyndu aftur.');
+  }
+  else if (answer !== "afkóða") {
+    const warning = alert($,{input},'Veit ekki hvaða aðgerð „${input}“ er. Reyndu aftur.');
+  }
   return answer;
 }
 
 ask();
 
 function afterAsk() {
-  if (answer === "kóða") {
-    const shift = prompt('Hversu mikið á að hliðra streng?');
+  if (answer === "kóða" || answer === "afkóða") {
+    const shift = prompt('Hversu mikið á að hliðra streng? Gefðu upp heiltölu á bilinu [1, 31]');
   }
+
 }
+
+afterAsk();
 
 /**
  * Kóðar streng með því að hliðra honum um n stök.
