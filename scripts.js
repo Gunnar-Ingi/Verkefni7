@@ -13,8 +13,13 @@ function ask() {
   return answer;
 }
 
-// Hér er gott að commenta út til að vinna í encode/decode föllum fyrst og síðan „viðmóti“ forrits
 ask();
+
+function afterAsk() {
+  if (answer === "kóða") {
+    const shift = prompt('Hversu mikið á að hliðra streng?');
+  }
+}
 
 /**
  * Kóðar streng með því að hliðra honum um n stök.
@@ -41,6 +46,7 @@ function encode(str, n) {
  * @returns {string} Upprunalegi strengurinn hliðraður um n til vinstri
  */
 function decode(str, n) {
+  str.toLocaleUpperCase();
 
   for (let i = n; i >= 0; i--) {
       str = LETTERS[i];
